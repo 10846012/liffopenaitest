@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>餐點建議機器人</title>
+
+    <script src="backend.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #chatbox {
+        height: 400px;
+        overflow-y: scroll;
+      }
+      #input-box {
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%, 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="chat-container">
+      <div id="messageContainer">
+        <!-- 用來顯示聊天訊息的聊天框 -->
+      </div>
+      <div id="chat-input">
+        <input type="text" id="messageInput" placeholder="輸入訊息" />
+        <button id="send-btn" onclick="sendMessage()">發送</button>
+      </div>
+    </div>
+  </body>
+</html>
