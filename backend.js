@@ -1,10 +1,11 @@
 async function getOpenAIResponse(prompt) {
+  const apiKey = "";
+
   fetch("https://api.openai.com/v1/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization:
-        "Bearer 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",
+      Authorization: "Bearer ${apiKey}",
     },
     body: JSON.stringify({
       model: "text-davinci-003",
@@ -83,7 +84,7 @@ async function replyToUser(input) {
   if (calorieLimit == "0" && cuisineType != "" && isOrdering == true) {
     calorieLimit = input;
   } else if (calorieLimit != "0" && cuisineType != "" && isOrdering == true) {
-    myPrompt = "推薦我熱量低於" + input + "的" + cuisineType;
+    myPrompt = "推薦我三樣熱量低於" + input + "的" + cuisineType;
     // await getOpenAIResponse(myPrompt).then(response);
     getOpenAIResponse(myPrompt);
   }
